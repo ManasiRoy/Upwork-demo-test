@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="date-picker/daterangepicker.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <title>Events Offers</title>
+</head>
+
+<body>
+
+    <main>
+        <section class="events-wrapper">
+            <div class="container">
+                <div class="events-header">
+                    <h2>Events & Offers</h2>
+                </div>
+                <div class="data-filters-outer">
+                    <div class="inner-filter-content-wrap date-range-outer">
+                        <h3> Date Range</h3>
+                        <input type="text" name="daterange" value="03/01/2024 to 03/15/2024" />
+                    </div>
+                    <div class="inner-filter-content-wrap">
+                        <h3> Type</h3>
+                        <div class="select-dropdown">
+                            <select>
+                                <option value="" disabled="disabled" selected="selected">All Types</option>
+                                <option value="Option 1">First Option</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="inner-filter-content-wrap">
+                        <h3> Property</h3>
+                        <div class="select-dropdown">
+                            <select>
+                                <option value="" disabled="disabled" selected="selected">All Property</option>
+                                <option value="Option 1">First Option</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="inner-filter-content-wrap">
+                        <h3> View </h3>
+                        <div class="select-dropdown">
+                            <select>
+                                <option value="" disabled="disabled" selected="selected">Active</option>
+                                <option value="Option 1">First Option</option>
+                                <option value="Option 2">2nd Option</option>
+                                <option value="Option 3">Option Number 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="inner-filter-content-wrap switching-wrp">
+                        <input type="checkbox" id="switch" /><label for="switch"></label>
+                        <h4>invited</h4>
+                    </div>
+                    <div class="inner-filter-content-wrap">
+                        <a href="#" class="clearAll">Clear all Filters</a>
+                    </div>
+                </div>
+                <div class="data-search-toggle-outer">
+                    <div class="search-outer">
+                        <button class="search" type="submit"></button>
+                        <input type="text" placeholder="Search..." autofocus required>
+                    </div>
+                    <div class="toggle-outer">
+                        <a href="javascript:void(0);" class="horizontal"></a>
+                        <a href="javascript:void(0);" class="vertical"></a>
+                    </div>
+                </div>
+                <div class="data-search-container">
+                    <div class="row">
+                        <div class="data-search-content-outer-wrap">
+                            <div class="data-search-content-wrap">
+                                <figure>
+                                    <img src="images/pic1.png" alt="banner" />
+                                </figure>
+                                <article class="data-search-inner-content-wrap">
+                                    <button class="purple-btn">Public Offer</button>
+                                    <h5>Public Promo</h5>
+                                    <div class="bothside-img-cont"><span class="img"><img src="images/calender-sm.png"
+                                                alt="calender"></span><span>01
+                                            May,2024 - 04 May,
+                                            2024</span></div>
+                                    <div class="bothside-img-cont"><span class="img"><img src="images/location.png"
+                                                alt="location" /></span><span>Hard Rock Cafe
+                                            Lisbon</span></div>
+                                    <button role="button" class="view-more-btn">View More</button>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="data-search-content-outer-wrap">
+                            <div class="data-search-content-wrap">
+                                <figure>
+                                    <img src="images/pic1.png" alt="banner" />
+                                </figure>
+                                <article class="data-search-inner-content-wrap">
+                                    <button class="purple-btn">Food</button>
+                                    <h5>$ 150 F&B Offer</h5>
+                                    <div class="bothside-img-cont"><span class="img"><img src="images/calender-sm.png"
+                                                alt="calender"></span><span>01
+                                            May,2024 - 04 May,
+                                            2024</span></div>
+                                    <div class="bothside-img-cont"><span class="img"><img src="images/location.png"
+                                                alt="location" /></span><span>Hard Rock Cafe
+                                            Lisbon</span></div>
+                                    <button role="button" class="view-more-btn">View More</button>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="date-picker/daterangepicker.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('input[name="daterange"]').daterangepicker({
+                opens: 'left'
+            }, function (start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+        });
+        $(document).ready(function () {
+            $(".vertical").on("click", function () {
+                $('.data-search-container .data-search-content-outer-wrap').toggleClass('active')
+            })
+        })
+    </script>
+</body>
+
+</html>
